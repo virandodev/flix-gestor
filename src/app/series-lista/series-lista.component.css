@@ -49,6 +49,11 @@
     margin-left: 10px;
 }
 
+.check {
+    color: #999;
+    font-size: 40px;
+}
+
 .missing {
     margin-right: 15px;
     color: #999;
