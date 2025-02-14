@@ -1,0 +1,66 @@
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    margin-right: 10px;
+}
+
+.infos {
+    flex-grow: 1;
+}
+
+.buttons {
+    margin-bottom: 5px;
+}
+
+.btn {
+    margin-right: 10px;
+    width: 48%;
+    font-weight: 500;
+}
+
+.texts {
+    display: flex;
+    align-items: center;
+}
+
+.texts h3 {
+    font-size: 45px;
+}
+
+.texts h4 {
+    font-size: 20px;
+    margin-top: 18px;
+    margin-left: 20px
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.missing {
+    margin-right: 15px;
+    color: #999;
+    font-size: 28px;
+}
+
+.circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
