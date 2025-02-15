@@ -9,5 +9,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './series-lista.component.css'
 })
 export class SeriesListaComponent {
+  serieExemplo = {
+    'nome': 'Os Simpsons',
+    'descricao': 'Bart, O Assassino',
+    'streaming': 'Netflix'
+  }
 
 }
