@@ -8,7 +8,7 @@
       </mat-expansion-panel-header>
       <div class="content">
         <div class="image">
-          <img src="posters/simpsons.png" width="125" height="110" />
+          <img [src]="'posters/' + serieExemplo.imageUrl" width="125" height="110" [alt]="serieExemplo.nome" />
         </div>
         <div class="infos">
           <div class="buttons">

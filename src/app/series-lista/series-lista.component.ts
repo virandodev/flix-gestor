@@ -12,7 +12,8 @@ export class SeriesListaComponent {
   serieExemplo = {
     'nome': 'Os Simpsons',
     'descricao': 'Bart, O Assassino',
-    'streaming': 'Netflix'
+    'streaming': 'Netflix',
+    'imageUrl': 'simpsons.png'
   }
 
 }
