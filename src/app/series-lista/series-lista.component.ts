@@ -13,7 +13,8 @@ export class SeriesListaComponent {
     'nome': 'Os Simpsons',
     'descricao': 'Bart, O Assassino',
     'streaming': 'Netflix',
-    'imageUrl': 'simpsons.png'
+    'imageUrl': 'simpsons.png',
+    'episodiosRestantes': 22
   }
 
   titulo = 'ASSISTIR A SEGUIR';
@@ -23,7 +24,7 @@ export class SeriesListaComponent {
   }
 
   onFinalizado() {
-    window.alert("Usuário clicou em assistir");
+    this.serieExemplo.episodiosRestantes--;
   }
 
 }
