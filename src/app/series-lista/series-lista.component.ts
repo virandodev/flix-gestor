@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FAKE_SERIES } from '../../fake-data';
+import { StatsComponent } from "../stats/stats.component";
 
 
 @Component({
   selector: 'app-series-lista',
-  imports: [MatExpansionModule],
+  imports: [MatExpansionModule, StatsComponent],
   templateUrl: './series-lista.component.html',
   styleUrl: './series-lista.component.css'
 })
