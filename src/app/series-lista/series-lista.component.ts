@@ -16,4 +16,10 @@ export class SeriesListaComponent {
     'imageUrl': 'simpsons.png'
   }
 
+  titulo = 'ASSISTIR A SEGUIR';
+
+  get imagePath() {
+    return 'posters/' + this.serieExemplo.imageUrl;
+  }
+
 }

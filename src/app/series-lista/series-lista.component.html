@@ -3,12 +3,12 @@
     <mat-expansion-panel expanded>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <div class="title">ASSISTIR A SEGUIR</div>
+          <div class="title">{{ titulo }}</div>
         </mat-panel-title>
       </mat-expansion-panel-header>
       <div class="content">
         <div class="image">
-          <img [src]="'posters/' + serieExemplo.imageUrl" width="125" height="110" [alt]="serieExemplo.nome" />
+          <img [src]="imagePath" width="125" height="110" [alt]="serieExemplo.nome" />
         </div>
         <div class="infos">
           <div class="buttons">
