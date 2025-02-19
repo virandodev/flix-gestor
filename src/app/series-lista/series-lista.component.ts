@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { FAKE_SERIES } from '../../fake-data';
 
 
 @Component({
@@ -9,13 +10,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './series-lista.component.css'
 })
 export class SeriesListaComponent {
-  serieExemplo = {
-    'nome': 'Os Simpsons',
-    'descricao': 'Bart, O Assassino',
-    'streaming': 'Netflix',
-    'imageUrl': 'simpsons.png',
-    'episodiosRestantes': 22
-  }
+  serieExemplo = FAKE_SERIES[0];
+  serieExemplo1 = FAKE_SERIES[1];
+  serieExemplo2 = FAKE_SERIES[2];
 
   titulo = 'ASSISTIR A SEGUIR';
 
