@@ -6,71 +6,31 @@
           <div class="title">{{ titulo }}</div>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      <div class="content">
-        <div class="image">
-          <img [src]="imagePath" width="125" height="110" [alt]="serieExemplo.nome" />
-        </div>
-        <div class="infos">
-          <div class="buttons">
-            <button class="btn btn-secondary">{{ serieExemplo.nome }}</button>
-            <button class="btn btn-warning">{{ serieExemplo.streaming }}</button>
-          </div>
-          <div class="texts">
-            <h3>T01 -> E02</h3>
-            <h4>{{ serieExemplo.descricao }}</h4>
-          </div>
-        </div>
-        <div class="icons">
-          <div class="circle missing">+{{ serieExemplo.episodiosRestantes }}</div>
-          <div class="circle check" (click)="onFinalizado()">
-            <i class="bi bi-check-circle"></i>
-          </div>
-        </div>
-      </div>
 
-      <div class="content">
-        <div class="image">
-          <img [src]="imagePath" width="125" height="110" [alt]="serieExemplo1.nome" />
-        </div>
-        <div class="infos">
-          <div class="buttons">
-            <button class="btn btn-secondary">{{ serieExemplo1.nome }}</button>
-            <button class="btn btn-warning">{{ serieExemplo1.streaming }}</button>
+      @for(serie of serieExemplo; track serie.id) {
+        <div class="content">
+          <div class="image">
+            <img [src]="imagePath + serie.imageUrl" width="125" height="110" [alt]="serie.nome" />
           </div>
-          <div class="texts">
-            <h3>T01 -> E02</h3>
-            <h4>{{ serieExemplo1.descricao }}</h4>
+          <div class="infos">
+            <div class="buttons">
+              <button class="btn btn-secondary">{{ serie.nome }}</button>
+              <button class="btn btn-warning">{{ serie.streaming }}</button>
+            </div>
+            <div class="texts">
+              <h3>T01 -> E02</h3>
+              <h4>{{ serie.descricao }}</h4>
+            </div>
+          </div>
+          <div class="icons">
+            <div class="circle missing">+{{ serie.episodiosRestantes }}</div>
+            <div class="circle check" (click)="onFinalizado($index)">
+              <i class="bi bi-check-circle"></i>
+            </div>
           </div>
         </div>
-        <div class="icons">
-          <div class="circle missing">+{{ serieExemplo1.episodiosRestantes }}</div>
-          <div class="circle check" (click)="onFinalizado()">
-            <i class="bi bi-check-circle"></i>
-          </div>
-        </div>
-      </div>
+      }
 
-      <div class="content">
-        <div class="image">
-          <img [src]="imagePath" width="125" height="110" [alt]="serieExemplo2.nome" />
-        </div>
-        <div class="infos">
-          <div class="buttons">
-            <button class="btn btn-secondary">{{ serieExemplo2.nome }}</button>
-            <button class="btn btn-warning">{{ serieExemplo2.streaming }}</button>
-          </div>
-          <div class="texts">
-            <h3>T01 -> E02</h3>
-            <h4>{{ serieExemplo2.descricao }}</h4>
-          </div>
-        </div>
-        <div class="icons">
-          <div class="circle missing">+{{ serieExemplo2.episodiosRestantes }}</div>
-          <div class="circle check" (click)="onFinalizado()">
-            <i class="bi bi-check-circle"></i>
-          </div>
-        </div>
-      </div>
     </mat-expansion-panel>
   </mat-accordion>
 </div>

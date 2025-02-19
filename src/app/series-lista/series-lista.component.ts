@@ -10,18 +10,16 @@ import { FAKE_SERIES } from '../../fake-data';
   styleUrl: './series-lista.component.css'
 })
 export class SeriesListaComponent {
-  serieExemplo = FAKE_SERIES[0];
-  serieExemplo1 = FAKE_SERIES[1];
-  serieExemplo2 = FAKE_SERIES[2];
+  serieExemplo = FAKE_SERIES;
 
   titulo = 'ASSISTIR A SEGUIR';
 
   get imagePath() {
-    return 'posters/' + this.serieExemplo.imageUrl;
+    return 'posters/';
   }
 
-  onFinalizado() {
-    this.serieExemplo.episodiosRestantes--;
+  onFinalizado(index) {
+    this.serieExemplo[index].episodiosRestantes--;
   }
 
 }
