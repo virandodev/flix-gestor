@@ -10,7 +10,11 @@
       @for(serie of serieExemplo; track serie.id) {
         <div class="content">
           <div class="image">
-            <img [src]="imagePath + serie.imageUrl" width="125" height="110" [alt]="serie.nome" />
+            @if(serie.imageUrl) {
+              <img [src]="imagePath + serie.imageUrl" width="125" height="110" [alt]="serie.nome" />
+            } @else {
+              <img [src]="imagePath + 'indisponivel.png'" width="125" height="110" [alt]="serie.nome" />
+            }
           </div>
           <div class="infos">
             <div class="buttons">
