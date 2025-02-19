@@ -52,6 +52,11 @@
 .check {
     color: #999;
     font-size: 40px;
+    cursor: pointer;
+}
+
+.check:hover {
+    background-color: #ffc107;
 }
 
 .missing {

@@ -22,4 +22,8 @@ export class SeriesListaComponent {
     return 'posters/' + this.serieExemplo.imageUrl;
   }
 
+  onFinalizado() {
+    window.alert("Usuário clicou em assistir");
+  }
+
 }
