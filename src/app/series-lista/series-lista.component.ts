@@ -12,6 +12,7 @@ import { StatsComponent } from "../stats/stats.component";
 })
 export class SeriesListaComponent {
   serieExemplo = FAKE_SERIES;
+  ultimaSerieVista;
 
   titulo = 'ASSISTIR A SEGUIR';
 
@@ -20,6 +21,7 @@ export class SeriesListaComponent {
   }
 
   onFinalizado(index) {
+    this.ultimaSerieVista = this.serieExemplo[index];
     this.serieExemplo[index].episodiosRestantes--;
   }
 
