@@ -4,13 +4,10 @@
     bottom: 0;
     width: 100%;
     padding: 15px;
-}
-
-.text-stats {
     color: black;
     font-size: 14px;
 }
 
-.text-stats span {
+.content span {
     font-weight: 500;
 }

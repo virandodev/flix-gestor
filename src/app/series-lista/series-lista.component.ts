@@ -25,4 +25,12 @@ export class SeriesListaComponent {
     this.serieExemplo[index].episodiosRestantes--;
   }
 
+  voltarSerieVista(ultimaSerie) {
+    const index = this.serieExemplo.findIndex(serie => serie.id === ultimaSerie.id);
+    if (index !== -1) {
+      this.serieExemplo[index].episodiosRestantes++
+      this.ultimaSerieVista = '';
+    }
+  }
+
 }
