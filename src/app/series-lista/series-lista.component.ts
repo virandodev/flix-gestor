@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FAKE_SERIES } from '../../fake-data';
 import { StatsComponent } from "../stats/stats.component";
+import { Serie } from '../serie.interface';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { StatsComponent } from "../stats/stats.component";
 })
 export class SeriesListaComponent {
   serieExemplo = FAKE_SERIES;
-  ultimaSerieVista;
+  ultimaSerieVista: Serie;
 
   titulo = 'ASSISTIR A SEGUIR';
 
@@ -29,7 +30,7 @@ export class SeriesListaComponent {
     const index = this.serieExemplo.findIndex(serie => serie.id === ultimaSerie.id);
     if (index !== -1) {
       this.serieExemplo[index].episodiosRestantes++
-      this.ultimaSerieVista = '';
+      this.ultimaSerieVista = null;
     }
   }
 

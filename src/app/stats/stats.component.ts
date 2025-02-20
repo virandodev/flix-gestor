@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Serie } from '../serie.interface';
 
 @Component({
   selector: 'app-stats',
@@ -7,11 +8,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './stats.component.css'
 })
 export class StatsComponent {
-  @Input({required: true}) ultimaSerie;
-  @Output() desfazerCall = new EventEmitter();
+  @Input({required: true}) ultimaSerie: Serie;
+  @Output() desfazerCall = new EventEmitter<Serie>();
 
   onDesfazer() {
     this.desfazerCall.emit(this.ultimaSerie);
-    this.ultimaSerie = '';
+    this.ultimaSerie = null;
   }
 }
