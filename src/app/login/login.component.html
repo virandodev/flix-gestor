@@ -6,11 +6,11 @@
         <h1 class="h3 mb-3">Login</h1>
     
         <div class="form-floating">
-          <input type="email" name="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
+          <input [(ngModel)]="usuario" type="email" name="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
           <label for="floatingInput">E-mail</label>
         </div>
         <div class="form-floating">
-          <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Senha">
+          <input type="password" [(ngModel)]="senha" name="password" class="form-control" id="floatingPassword" placeholder="Senha">
           <label for="floatingPassword">Password</label>
         </div>
     
@@ -19,6 +19,6 @@
             <input type="checkbox" value="remember-me"> Lembrar-me
           </label>
         </div>
-        <button class="w-100 btn btn-warning py-2" type="submit">Entrar</button>
+        <button class="w-100 btn btn-warning py-2" type="submit" (click)="test()">Entrar</button>
       </form>
 </div>
