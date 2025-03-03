@@ -19,7 +19,7 @@
           <div class="infos">
             <div class="buttons">
               <button class="btn btn-secondary">{{ serie.nome }}</button>
-              <button class="btn btn-warning">{{ serie.streaming }}</button>
+              <button class="btn btn-warning" [class.btn-danger]="serie.streaming === 'Netflix'">{{ serie.streaming }}</button>
             </div>
             <div class="texts">
               <h3>T01 -> E02</h3>
@@ -27,9 +27,15 @@
             </div>
           </div>
           <div class="icons">
-            <div class="circle missing">+{{ serie.episodiosRestantes }}</div>
+            <div class="circle missing">
+              @if(serie.episodiosRestantes > 0) {
+                +{{ serie.episodiosRestantes }}
+              } @else {
+                0
+              }
+            </div>
             <div class="circle check" (click)="onFinalizado($index)">
-              <i class="bi bi-check-circle"></i>
+              <i class="bi bi-check-circle" [class.bi-emoji-laughing]="serie.episodiosRestantes < 0"></i>
             </div>
           </div>
         </div>
