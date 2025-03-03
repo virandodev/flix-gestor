@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
+
+import { Serie } from '../serie.interface';
 import { FAKE_SERIES } from '../../fake-data';
 import { StatsComponent } from "../stats/stats.component";
-import { Serie } from '../serie.interface';
 
 
 @Component({
   selector: 'app-series-lista',
-  imports: [MatExpansionModule, StatsComponent],
+  imports: [MatExpansionModule, StatsComponent, CommonModule],
   templateUrl: './series-lista.component.html',
   styleUrl: './series-lista.component.css'
 })
@@ -32,6 +34,14 @@ export class SeriesListaComponent {
       this.serieExemplo[index].episodiosRestantes++
       this.ultimaSerieVista = null;
     }
+  }
+
+  getStreamingColor(streaming: string) {
+    return {
+      'btn-primary': streaming === 'Amazon',
+      'btn-danger': streaming === 'Netflix',
+      'btn-dark': streaming === 'HBO'
+    };
   }
 
 }

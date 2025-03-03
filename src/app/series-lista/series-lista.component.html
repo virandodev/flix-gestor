@@ -19,7 +19,7 @@
           <div class="infos">
             <div class="buttons">
               <button class="btn btn-secondary">{{ serie.nome }}</button>
-              <button class="btn btn-warning" [class.btn-danger]="serie.streaming === 'Netflix'">{{ serie.streaming }}</button>
+              <button class="btn btn-warning" [ngClass]="getStreamingColor(serie.streaming)">{{ serie.streaming }}</button>
             </div>
             <div class="texts">
               <h3>T01 -> E02</h3>
