@@ -3,12 +3,17 @@
         <div class="d-flex justify-content-center" >
             <img class="mb-4" src="logo.png" alt="Logo" height="57">
         </div>
-        <h1 class="h3 mb-3">Login</h1>
+        <h1 class="h3 mb-3">{{ isCadastrar ? 'Cadastrar' : 'Login' }}</h1>
     
         <div class="form-floating">
           <input [(ngModel)]="usuario" type="email" name="email" class="form-control" id="floatingInput" placeholder="nome@examplo.com">
           <label for="floatingInput">E-mail</label>
         </div>
+
+        @if(isCadastrar) {
+          <ng-container *ngTemplateOutlet="camposCadastro"></ng-container>
+        }
+        
         <div class="form-floating">
           <input type="password" [(ngModel)]="senha" name="password" class="form-control" id="floatingPassword" placeholder="Senha">
           <label for="floatingPassword">Password</label>
@@ -19,6 +24,20 @@
             <input type="checkbox" value="remember-me"> Lembrar-me
           </label>
         </div>
+        <a class="" (click)="onCadastrar()">{{ isCadastrar ? 'Não tenho' : 'Tenho'}} uma conta</a>
         <button class="w-100 btn btn-warning py-2" type="submit" (click)="test()">Entrar</button>
       </form>
 </div>
+
+<!--Campos Cadastro-->
+<ng-template #camposCadastro>
+  <div class="form-floating">
+    <input [(ngModel)]="nome" type="text" name="nome" class="form-control" id="floatingInput" placeholder="Seu Nome">
+    <label for="floatingInput">Nome</label>
+  </div>
+
+  <div class="form-floating">
+    <input [(ngModel)]="nascimento" type="date" name="nascimento" class="form-control" id="floatingInput">
+    <label for="floatingInput">Data de Nascimento</label>
+  </div>
+</ng-template>
