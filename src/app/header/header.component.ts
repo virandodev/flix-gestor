@@ -1,6 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
+
 import { LoginComponent } from '../login/login.component';
+import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -12,13 +14,17 @@ export class HeaderComponent implements OnInit {
   readonly dialog = inject(MatDialog);
   isLogado = false;
 
+  constructor(
+    private authService: AuthService
+  ) {}
+
   ngOnInit() {
     this.verificarLogin();
   }
 
   onLogin() {
     if(this.isLogado) {
-      localStorage.removeItem('credenciais');
+      this.authService.logout();
       window.location.reload(); //COMANDO FEIO, REMOVER PROXIMAS AULAS!
     } else {
       this.dialog.open(LoginComponent);
@@ -26,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   verificarLogin() {
-    const infoLogin = localStorage.getItem('credenciais');
+    const infoLogin = this.authService.verificaLogin();
     if (infoLogin) {
       this.isLogado = true;
     }
