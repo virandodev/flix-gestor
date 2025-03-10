@@ -19,11 +19,11 @@
           <div class="infos">
             <div class="buttons">
               <button class="btn btn-secondary">{{ serie.nome }}</button>
-              <button class="btn btn-warning" [ngClass]="getStreamingColor(serie.streaming)">{{ serie.streaming }}</button>
+              <button class="btn btn-warning" [ngClass]="getStreamingColor(serie.streaming)">{{ serie.streaming | uppercase }}</button>
             </div>
             <div class="texts">
               <h3>T01 -> E02</h3>
-              <h4>{{ serie.descricao }}</h4>
+              <h4>{{ serie.descricao | titlecase }}</h4>
             </div>
           </div>
           <div class="icons">
