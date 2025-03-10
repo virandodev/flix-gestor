@@ -17,7 +17,12 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogin() {
-    this.dialog.open(LoginComponent);
+    if(this.isLogado) {
+      localStorage.removeItem('credenciais');
+      window.location.reload(); //COMANDO FEIO, REMOVER PROXIMAS AULAS!
+    } else {
+      this.dialog.open(LoginComponent);
+    }
   }
 
   verificarLogin() {
