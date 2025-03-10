@@ -3,3 +3,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.global-text-pointer {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+.global-text-pointer:hover {
+    color: #FFC107;
+}
