@@ -16,8 +16,12 @@ export class LoginComponent {
   nascimento = '';
   isCadastrar = false;
 
-  test() {
-    console.log('Meu usuario:', this.usuario, ' possui a senha: ', this.senha);
+  login() {
+    let credenciais = {
+      usuario: this.usuario,
+      senha: this.senha
+    }
+    localStorage.setItem('credenciais', JSON.stringify(credenciais));
   }
 
   onCadastrar() {

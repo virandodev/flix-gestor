@@ -25,13 +25,13 @@
             <label class="global-text-pointer" for="lembrar">Lembrar-me</label>
           </div>
           <div class="col-6 text-end my-2">
-            <a class="global-text-pointer" (click)="onCadastrar()">{{ isCadastrar ? 'Não tenho' : 'Tenho'}} uma conta</a>
+            <a class="global-text-pointer" (click)="onCadastrar()">{{ isCadastrar ? 'Tenho' : 'Não tenho'}} uma conta</a>
           </div>
         </div>
     
         
 
-        <button class="w-100 btn btn-warning py-2" type="submit" (click)="test()">Entrar</button>
+        <button class="w-100 btn btn-warning py-2" type="submit" (click)="login()">{{ isCadastrar ? 'Cadastrar' : 'Login'}}</button>
       </form>
 </div>
 
