@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 import { LoginComponent } from '../login/login.component';
@@ -11,11 +11,11 @@ import { AuthService } from '../shared/services/auth.service';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
-  readonly dialog = inject(MatDialog);
   isLogado = false;
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    readonly dialog: MatDialog
   ) {}
 
   ngOnInit() {
