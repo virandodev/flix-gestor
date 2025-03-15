@@ -17,7 +17,8 @@ export class SeriesListaComponent {
   serieExemplo = FAKE_SERIES;
   ultimaSerieVista: Serie;
 
-  titulo = 'ASSISTIR A SEGUIR';
+  titulo1 = 'ASSISTIR A SEGUIR';
+  titulo2 = 'FINALIZADOS';
 
   get imagePath() {
     return 'posters/';
@@ -25,13 +26,13 @@ export class SeriesListaComponent {
 
   onFinalizado(index) {
     this.ultimaSerieVista = this.serieExemplo[index];
-    this.serieExemplo[index].episodiosRestantes--;
+    this.serieExemplo[index].episodioAtual++;
   }
 
   voltarSerieVista(ultimaSerie) {
     const index = this.serieExemplo.findIndex(serie => serie.id === ultimaSerie.id);
     if (index !== -1) {
-      this.serieExemplo[index].episodiosRestantes++
+      this.serieExemplo[index].episodioAtual--
       this.ultimaSerieVista = null;
     }
   }
@@ -42,6 +43,19 @@ export class SeriesListaComponent {
       'btn-danger': streaming === 'Netflix',
       'btn-dark': streaming === 'HBO'
     };
+  }
+
+  getEpisodiosRestantes(serie: Serie): number {
+    const qtdTotalSerie = serie.episodios.length;
+    const episodioAtual = serie.episodioAtual;
+
+    const qtdRestante = qtdTotalSerie - (episodioAtual - 1);
+
+    return qtdRestante;
+  }
+
+  serieFinalizada(serie: Serie): boolean {
+    return serie.episodioAtual <= serie.episodios.length;
   }
 
 }

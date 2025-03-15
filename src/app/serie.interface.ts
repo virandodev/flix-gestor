@@ -1,8 +1,13 @@
 export interface Serie {
     id: number;
     nome: string;
-    descricao: string;
     streaming: string;
     imageUrl: string;
-    episodiosRestantes: number;
+    episodioAtual: number;
+    episodios: Episodio[]
+}
+
+export interface Episodio {
+    id: number;
+    descricao: string;
 }

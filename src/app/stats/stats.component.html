@@ -1,5 +1,5 @@
 <div class="content row">
     <div class="col-3">Última série assistida: <span>{{ ultimaSerie?.nome }}</span></div>
-    <div class="col-3">Último episódio assistido: <span>{{ ultimaSerie?.descricao }}</span></div>
+    <div class="col-3">Último episódio assistido: <span>{{ ultimaSerie?.episodios[ultimaSerie.episodioAtual - 2].descricao }}</span></div>
     <div class="col-3"><button class="btn btn-warning" (click)="onDesfazer()">Desfazer</button></div>
 </div>
