@@ -28,7 +28,6 @@ export class LoginComponent {
   login() {
     this.authService.login(this.usuario, this.senha);
     this.dialogRef.close('Fechando Modal...');
-    window.location.reload(); //COMANDO FEIO, REMOVER PROXIMAS AULAS!
   }
 
   onCadastrar() {

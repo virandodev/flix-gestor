@@ -13,7 +13,7 @@
         </ul>
 
         <div class="text-end">
-          <button type="button" class="btn btn-warning" (click)="onLogin()">{{ isLogado ? 'Sair' : 'Login' }}</button>
+          <button type="button" class="btn btn-warning" (click)="onLogin()">{{ this.authService.isLogado() ? 'Sair' : 'Login' }}</button>
         </div>
       </div>
     </div>

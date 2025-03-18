@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  isLogado = signal(false);
 
   constructor() { }
 
@@ -13,14 +14,18 @@ export class AuthService {
       senha: senha
     }
     localStorage.setItem('credenciais', JSON.stringify(credenciais));
+    this.isLogado.set(true);
   }
 
   logout() {
     localStorage.removeItem('credenciais');
+    this.isLogado.set(false);
   }
 
   verificaLogin() {
     const infoLogin = localStorage.getItem('credenciais');
-    return infoLogin ? true : false
+    if (infoLogin) {
+      this.isLogado.set(true);
+    }
   }
 }

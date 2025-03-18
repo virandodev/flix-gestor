@@ -10,32 +10,18 @@ import { AuthService } from '../shared/services/auth.service';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
-  isLogado = false;
+export class HeaderComponent {
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     readonly dialog: MatDialog
   ) {}
 
-  ngOnInit() {
-    this.verificarLogin();
-  }
-
   onLogin() {
-    if(this.isLogado) {
+    if(this.authService.isLogado()) {
       this.authService.logout();
-      window.location.reload(); //COMANDO FEIO, REMOVER PROXIMAS AULAS!
     } else {
       this.dialog.open(LoginComponent);
     }
-  }
-
-  verificarLogin() {
-    const infoLogin = this.authService.verificaLogin();
-    if (infoLogin) {
-      this.isLogado = true;
-    }
-    console.log('Está logado? ', this.isLogado);
   }
 }
