@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
-import { HeaderComponent } from "./header/header.component";
-import { SeriesListaComponent } from './series-lista/series-lista.component';
 import { AuthService } from './shared/services/auth.service';
+import { SeriesModule } from './series/series.module';
 
 @Component({
   selector: 'app-root',
-  imports: [HeaderComponent, SeriesListaComponent],
+  imports: [SeriesModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

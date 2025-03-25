@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatExpansionModule } from '@angular/material/expansion';
 
-import { Serie } from '../serie.interface';
-import { FAKE_SERIES } from '../../fake-data';
-import { StatsComponent } from "../stats/stats.component";
+import { Serie } from '../../serie.interface';
+import { FAKE_SERIES } from '../../../fake-data';
 
 
 @Component({
   selector: 'app-series-lista',
-  imports: [MatExpansionModule, StatsComponent, CommonModule],
+  standalone: false,
   templateUrl: './series-lista.component.html',
   styleUrl: './series-lista.component.css'
 })

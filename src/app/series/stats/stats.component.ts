@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Serie } from '../serie.interface';
+import { Serie } from '../../serie.interface';
 
 @Component({
   selector: 'app-stats',
-  imports: [],
+  standalone: false,
   templateUrl: './stats.component.html',
   styleUrl: './stats.component.css'
 })
