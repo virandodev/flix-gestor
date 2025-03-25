@@ -15,6 +15,9 @@ import { SeriesListaComponent } from './series-lista/series-lista.component';
   imports: [
     CommonModule,
     MatExpansionModule
+  ],
+  exports: [
+    SeriesListaComponent
   ]
 })
 export class SeriesModule { }
